@@ -56,6 +56,20 @@ public class Solution {
 //        
 //        new SelectTwoAdd().run();
 //        
-        new KakaoKeypad().run();
+//        new KakaoKeypad().run();
+//        
+//        new Budget().run();
+//        
+//        new AddDigit().run();
+//        
+//        new NaturalNumberToArr().run();
+//        
+//        new MakingIronyChar().run();
+//        
+//        new DecreasingOrderInt().run();
+//        
+//        new MinValueRemover().run();
+//        
+        
     }
 }

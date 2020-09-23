@@ -10,6 +10,11 @@ import java.util.ArrayList;
  */
 public class KakaoKeypad {
 
+    /**
+     * 키패드 거리 구하기 프로그램을 실행하는 함수 
+     * @author kwakjuheon
+     * @since Sep 23, 2020
+     */
     public void run() {
         System.out.println(solution(new int[] { 1, 3, 4, 5, 8, 2, 1, 4, 5, 9, 5 }, "right"));
         System.out.println(solution(new int[] { 7, 0, 8, 2, 8, 3, 1, 5, 7, 6, 2 }, "left"));
@@ -22,7 +27,7 @@ public class KakaoKeypad {
      * @since Sep 22, 2020
      * @param numbers 순서대로 눌러야 할 번호 목록 
      * @param hand 주로 사용하는 손 
-     * @return 키패드별로 사용한 손의 리스 
+     * @return 키패드별로 사용한 손의 리스트  
      */
     public String solution(int[] numbers, String hand) {
         
@@ -61,10 +66,14 @@ public class KakaoKeypad {
                 answer += "R";
                 break;
             default:
+                // 왼손에서의 거리 
                 int leftD = Math.abs(currPoint.x - leftPoint.x) + Math.abs(currPoint.y - leftPoint.y);
+                // 오른손에서의 거리 
                 int rightD = Math.abs(currPoint.x - rightPoint.x) + Math.abs(currPoint.y - rightPoint.y);
                 
+                // 양손의 거리가 같을 때 
                 if (leftD == rightD) {
+                    // 어느 손을 주로 사용하는지 보고, 해당 손 값을 사용한다. 
                     char checkChar = hand.charAt(0);
                     switch (checkChar) {
                     case 'l':
@@ -76,10 +85,14 @@ public class KakaoKeypad {
                         rightPoint = pointAL.get(number);
                         break;
                     }
-                } else if (leftD < rightD) {
+                }
+                // 왼손이 더 가까울 경우 
+                else if (leftD < rightD) {
                     answer += "L";
                     leftPoint = pointAL.get(number);
-                } else {
+                }
+                // 오른손이 더 가까울 경우 
+                else {
                     answer += "R";
                     rightPoint = pointAL.get(number);
                 }
@@ -91,7 +104,7 @@ public class KakaoKeypad {
     
     
     /**
-     * 키패드를 좌표로 나타냈을 경우의 위치 정
+     * 키패드를 좌표로 나타냈을 경우의 위치 정보 
      * @author kwakjuheon
      * @since Sep 22, 2020
      *
