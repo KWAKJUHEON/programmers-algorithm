@@ -42,5 +42,7 @@ public class Solution {
 //        new MaskingPhoneNum().run();
 //        new PrintingStar().run();
 //        new DartGame().run();
+//        new SecretMap().run();
+        new FailureRate().run();
     }
 }
